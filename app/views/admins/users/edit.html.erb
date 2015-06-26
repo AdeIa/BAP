@@ -1,0 +1,26 @@
+<h3>Editace uživatele <%= @user.email%></h3>
+<div class="row col-md-5">
+<div class="vspace5"></div>
+
+<%= form_for @user, :url => admins_user_path, :html => { :method => :put } do |f| %>
+         
+  <div class="vspace2"></div>
+
+   <div class="form-group has-feedback">
+      		<%= f.label :'Jméno', class:"control-label"  %>
+          <%= f.text_field :name, autofocus: true, class:"form-control", placeholder:"Jméno"  %>
+          <i class="glyphicon glyphicon-user form-control-feedback"></i>
+  </div>
+
+   <div class="form-group has-feedback">
+      		<%= f.label :'Přijmení', class:"control-label"  %>
+      		<%= f.text_field :surname, autofocus: true, class:"form-control", placeholder:"Přijmení"  %>
+          <i class="glyphicon glyphicon-user form-control-feedback"></i>
+  </div>
+  
+
+      <div class="vspace4"></div>
+
+      <%= f.submit "Potvrdit", class:"width-25 pull-left btn btn-md btn-success"  %>
+ <% end %>     
+</div>

@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: 
+ czu_number: 000058024
+ kii_number: 1
+ quantity: 1
+ name: "3 ds Max 8 : průvodce modelováním a animací / Boris Kulagin ; [překlad Jan Kříž]"
+ author_name: "Kulagin, Boris"
+ isbn: 978-80-251-1463-6 (brož.)
+ edition: Vyd. 1.
+ publishing: "Brno :Computer Press,2007"
+ form: příručky
+ description: "389 s. :il. ;23 cm +"
+ language: cze
+#
+two: 
+ czu_number: 000058159
+ kii_number: 
+ quantity: 2
+ name: "BPMN method and style /Bruce Silver"
+ author_name: "Silver, Bruce"
+ isbn:  978-0-9823681-0-7 (brož.)
+ publishing: "Aptos :Cody-Cassidy Press,2009"
+ form: příručky
+ description: "xviii, 213 s. :il."
+
+three:
+ czu_number: czu000051107
+ kii_number: 
+ quantity: 1
+ name: "Agile Software Development with Scrum /Ken Schwaber, Mike Beedle"
+ author_name: "Schwaber, Ken"
+ isbn:  0-13-067634-9
+ publishing: "Upper Saddle River :Prentice Hall,c2002"
+ description: "xvi, 158 s. :il."

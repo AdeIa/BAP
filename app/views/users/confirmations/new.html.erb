@@ -1,0 +1,31 @@
+<%= render 'users/shared/logo' %> 
+
+  <div class="vspace4"></div>
+  <h3 class="title-danger">Znovu poslat potvrzovací e-mail</h3>
+  <div class="vspace4"></div>
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <% devise_error_messages! %>
+
+   <%= render 'users/shared/logo' %> 
+
+  <div class="form-group has-feedback">
+    <%= f.label :email, class:"control-label" %><br />
+    <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Email" %>
+    <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+  </div>
+
+  
+<div class="vspace2"></div>
+
+
+  <div class="actions">
+    <%= f.submit "Poslat potvrzovací e-mail", class:"pull-right btn btn-md btn-danger" %>
+  </div>
+<% end %>
+
+
+<div class="vspace6"></div>
+<hr style="border-color: #818181">
+
+<%= render "users/shared/links" %>

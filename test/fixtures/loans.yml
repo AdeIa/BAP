@@ -1,0 +1,16 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  book_id:  000058024
+  user_id: 2
+  from: 2015-05-06
+  to: 2015-06-06
+
+two:
+  id: 2
+  book_id:  000058159
+  user_id: 2
+  from: 2015-05-06
+  to: 2015-06-06
+  returned: 2015-06-01

@@ -1,0 +1,5 @@
+<p>Vítejte <%= @email %>!</p>
+
+<p>Váš účet můžete potvrdit odkazem níže:</p>
+
+<p><%= link_to 'Potvrdit účet', confirmation_url(@resource, confirmation_token: @token) %></p>

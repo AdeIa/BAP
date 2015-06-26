@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>
+      Dobrý den,
+     </p>
+     <p>
+      Blíží se datum vrácení těchto výpůjček:
+      </p>
+      <% @books.each do |book| %>
+      <p><%= book %>,</p>
+      <% end %>
+    <br>
+      
+    <p>Automaticky odeslaný email z aplikace knihovny katedry informačního inženýrství PEF ČZU</p>
+    
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<div class="row search-form" style="margin-top: 0.6em">
+    <%= form_tag(books_search_path, :method => "get", class: "navbar-form", id: "search-form") do %> 
+      <div class="input-group">
+          <%= select_tag 'category', options_for_select([ "Titul", "Autor", "ISBN" ], params[:category]), { :class => 'selectpicker', :'data-style'=>"search"} %>
+          <%= text_field_tag :search, params[:search], class: "form-control search", size: 40, placeholder: "Hledat v katalogu..." %>
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-success search"><span class="glyphicon glyphicon-search"></span> Hledat </button>
+        </span>
+      </div><!-- /input-group -->
+    <% end %>
+</div><!-- /.row -->
+

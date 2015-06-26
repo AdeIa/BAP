@@ -1,0 +1,80 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <% devise_error_messages! %>
+  
+  <%= render 'users/shared/logo' %> 
+  
+  <div class="vspace4"></div>
+  <h2 class="form-signin-heading">Editovat účet</h2>
+  <div class="vspace4"></div>
+  
+   <div class="form-group has-feedback">
+    <%= f.label :Jméno, class:"control-label" %><br />
+    <%= f.text_field :name, autofocus: true, class:"form-control", placeholder:"Jméno" %>
+    <i class="glyphicon glyphicon-user form-control-feedback"></i>
+  </div>
+
+  <div class="vspace2"></div>
+
+   <div class="form-group has-feedback">
+    <%= f.label :Přijmení, class:"control-label" %><br />
+    <%= f.text_field :surname, autofocus: true, class:"form-control", placeholder:"Přijmení" %>
+    <i class="glyphicon glyphicon-user form-control-feedback"></i>
+  </div>
+  
+  <div class="vspace2"></div>
+
+   <div class="form-group has-feedback">
+    <%= f.label :Email, class:"control-label" %><br />
+    <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Email" %>
+    <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+  <div class="vspace2"></div>
+
+   <div class="form-group has-feedback">
+    <%= f.label :Nové_heslo, class:"control-label" %> <i>(Nechte prázdné, pokud nechcete heslo měnit)</i><br />
+    <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Nové heslo" %>
+    <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+  </div>
+
+  <div class="vspace2"></div>
+
+   <div class="form-group has-feedback">
+    <%= f.label :Potvrzení_nového_hesla, class:"control-label" %><br />
+    <%= f.password_field :password_confirmation, label: "heslo", autocomplete: "off", class:"form-control", placeholder:"Potvrďte nové heslo"  %>
+    <i class="glyphicon glyphicon-repeat form-control-feedback"></i>
+  </div>
+
+  <div class="vspace2"></div>
+
+  <div class="form-group has-feedback">
+    <%= f.label :"Aktuální_heslo*", class:"control-label"  %> <i>(Aktuální heslo pro potvrzení změn)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off", class:"form-control", placeholder:"Aktuální heslo"  %>
+    <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+  </div>
+
+  <div class="vspace2"></div>
+
+  <div class="form-group has-feedback">
+    <%= f.label :Posílat_automatické_upomínky, class:"control-label"  %><br />
+    <%= f.check_box :reminder?  %> 
+  </div>
+  
+  <div class="vspace2"></div>
+
+
+  <div class="actions">
+    <%= f.submit "Upravit", class:"pull-left btn btn-md btn-warning"  %>
+  
+  </div>
+ <% end %>
+
+  <%= button_to "Zrušit účet", user_self_destroy_user_path(id: current_user.id), data: { confirm: "Jste si jistí?" }, method: :delete, class:"pull-right btn btn-md btn-danger" %>
+<div class="vspace6"></div>
+<hr style="border-color: #818181">
+<p><strong>*</strong> Povinné</p>
+
+<%= link_to "Zpět do knihovny", :back, :class => "login-link"  %>

@@ -1,0 +1,18 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+loan_time:
+  id: 1
+  key: loan_time
+  value: 30
+
+loan_prolong_time:
+  key: loan_prolong_time
+  value: 30
+
+max_loan_time:
+  key: max_loan_time
+  value: 90
+
+books_per_page:
+  key: books_per_page
+  value: 50

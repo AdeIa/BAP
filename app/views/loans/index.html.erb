@@ -1,0 +1,60 @@
+<h1>Přehled výpůjček</h1>
+<div class="vspace5"></div>
+<% if @loans.empty? %>
+<p class="color-warning"><strong>Knihovna nemá momentálně žádné vypůjčené knihy.</strong></p>
+<% else %>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= sortable "user_id", "Čtenář" %></th>
+      <th><%= sortable "name", "Titul" %></th>
+      <th><%= sortable "author_name", "Autor" %></th>
+      <th><%= sortable "from", "Od" %></th>
+      <th><%= sortable "to", "Do" %></th>
+      <th>Předat výpůjčku dalšímu čtenáři</th>
+      <th>Prodloužit</th>
+      <th>Potvrdit vrácení</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @loans.each do |loan| %>
+      <tr>
+        <td><%= link_to loans_user_all_path(id: loan.user_id) do %><%= User.get_surname( loan.user_id) %> <%=  User.get_name( loan.user_id) %><% end %></td>
+        <td>
+          <%= link_to books_detail_path(:id => loan.book_id) do %>
+                <%= Book.get_name(loan.book_id) %> 
+          <% end %>
+        </td>
+         <td>
+           <%= link_to books_search_path(:category => "Autor", :search => Book.get_author(loan.book_id)) do %>
+                <%= Book.get_author(loan.book_id) %> 
+          <% end %>
+          </td>
+        <td><%= loan.from %></td>
+        <% if loan.to < Date.today %>
+        <td class="color-danger">
+        <strong><%= loan.to %></strong></td>
+        <% else %>
+        <td><%= loan.to %></td>
+        <% end %>            
+         <td>
+          <%= link_to new_loan_path(:id => loan.book_id, :prev_loan => loan.id, :user_id => loan.user_id),  :class => "btn btn-warning navbar-btn btn-sm", :role => "button", :id => "loan_#{loan.book_id}"  do %>
+            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to loans_prolong_path(:id => loan.id), :class => "btn btn-warning navbar-btn btn-sm", :role => "button"  do %>
+            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to loans_return_book_path(:id => loan.id), :class => "btn btn-success navbar-btn btn-sm", :role => "button"  do %>
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

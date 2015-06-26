@@ -1,0 +1,39 @@
+<h1>Přehled rezervací</h1>
+<div class="vspace5"></div>
+<% if @reservations.empty? %>
+<p class="color-warning"><strong>Nemáte momentálně žádné rezervace.</strong></p>
+<% else %>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= sortable "name", "Titul" %></th>
+      <th><%= sortable "author_name", "Autor" %></th>
+      <th><%= sortable "created_at", "Datum rezervace" %></th>
+      <th>Zrušit</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td>
+
+         <%= link_to books_detail_path(:id => reservation.book_id) do %>
+             <%= Book.get_name(reservation.book_id) %> 
+          <% end %>
+        </td>
+        <td>
+            <%= link_to books_search_path(:category => "Autor", :search => Book.get_author(reservation.book_id)) do %>
+                <%= Book.get_author(reservation.book_id) %> 
+          <% end %>
+        </td>
+        <td><%= reservation.created_at.to_date %></td>
+          <td><%= link_to reservation_path(:id => reservation.id, :user_id => current_user.id), method: :delete, data: { confirm: 'Jste si jistí?' }, :class => "btn btn-danger navbar-btn btn-sm", :role => "button" do %>
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            <% end %>
+          </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

@@ -1,0 +1,36 @@
+<h1>Historie výpůjček</h1>
+<div class="vspace5"></div>
+<% if @loans.empty? %>
+<p class="color-warning"><strong>Vaše historie výpůjček neobsahuje momentálně žádný výtisk.</strong></p>
+<% else %>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= sortable "name", "Titul" %></th>
+      <th><%= sortable "author_name", "Autor" %></th>
+      <th><%= sortable "from", "Datum vypůjčení" %></th>
+      <th>Datum vrácení</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @loans.each do |loan| %>
+      <tr>
+        <td>
+          <%= link_to books_detail_path(:id => loan.book_id) do %>
+                <%= Book.get_name(loan.book_id) %> 
+          <% end %>
+        </td>
+         <td>
+         <%= link_to books_search_path(:category => "Autor", :search =>Book.get_author(loan.book_id)) do %>
+                <%= Book.get_author(loan.book_id) %> 
+          <% end %>
+        </td>
+        <td><%= loan.from %></td>
+        <td><%= loan.returned%></td>
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

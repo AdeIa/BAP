@@ -1,0 +1,50 @@
+<h1>Přehled rezervací</h1>
+<div class="vspace5"></div>
+<% if @reservations.empty? %>
+<p class="color-warning"><strong>Knihovna nemá momentálně žádné rezervace.</strong></p>
+<% else %>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= sortable "user_id", "Čtenář" %></th>
+      <th><%= sortable "name", "Titul" %></th>
+      <th><%= sortable "author_name", "Autor" %></th>
+      <th><%= sortable "created_at", "Datum rezervace" %></th>
+      <th>Vypůjčit</th>
+      <th>Zrušit</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td>
+          <%= link_to loans_user_all_path(id: reservation.user_id) do%>
+                       <%= User.get_surname( reservation.user_id) %> <%= User.get_name( reservation.user_id) %>
+                <% end %>  
+        </td>
+        <td>
+          <%= link_to books_detail_path(:id => reservation.book_id) do %>
+             <%= Book.get_name(reservation.book_id) %> 
+          <% end %>
+        </td>
+        <td>
+         <%= link_to books_search_path(:category => "Autor", :search => Book.get_author(reservation.book_id)) do %>
+                <%= Book.get_author(reservation.book_id) %> 
+          <% end %>
+        </td>
+        <td><%= reservation.created_at.to_date %></td>
+        <td>
+          <%= link_to loans_path(loan: {:book_id => reservation.book_id, :user_id => reservation.user_id, :from => Date.today, :to => (Date.today + @loan_length)}),  :method => :post, data: { confirm: 'Jste si jistí?' }, :class => "btn btn-success navbar-btn btn-sm", :role => "button" do %>
+                 <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+           <% end %>
+        </td>
+        <td><%= link_to reservation, method: :delete, data: { confirm: 'Jste si jistí?' }, :class => "btn btn-danger navbar-btn btn-sm", :role => "button" do %>
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

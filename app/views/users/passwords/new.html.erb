@@ -1,0 +1,26 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <% devise_error_messages! %>
+
+  <%= render 'users/shared/logo' %> 
+
+  <div class="vspace4"></div>  
+  <h3 class="title-danger">Zapomněli jste heslo?</h3>
+  <div class="vspace4"></div>  
+  
+  <div class="form-group has-feedback">
+    <%= f.label :email, class:"control-label" %><br />
+    <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Email" %>
+    <i class="glyphicon glyphicon-envelope form-control-feedback"></i>
+  </div>
+
+   <div class="vspace3"></div>
+
+  <div class="actions pull-right">
+    <%= f.submit "Poslat instrukce pro reset hesla", class:"pull-right btn btn-md btn-danger" %>
+  </div>
+<% end %>
+
+<div class="vspace6"></div>
+<hr style="border-color: #818181">
+
+<%= render "users/shared/links" %>

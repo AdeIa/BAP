@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd" xmlns="http://www.loc.gov/MARC21/slim">
+  <present>
+<record>
+<record_header>
+<set_entry>000000001</set_entry>
+</record_header>
+<doc_number>000063674</doc_number>
+<metadata>
+<oai_marc>
+
+
+<leader>00000nam-a22-----7a-4500</leader>
+<controlfield tag="001">000063674</controlfield>
+<controlfield tag="003">CZ-PrCZU</controlfield>
+<controlfield tag="005">20140103091358.0</controlfield>
+<controlfield tag="006">m--------u--------</controlfield>
+<controlfield tag="007">cr-cn-</controlfield>
+<controlfield tag="008">140103s2012----xxk----f-----||||-0-eng-d</controlfield>
+<datafield tag="020" ind1=" " ind2=" ">
+<subfield code="a">978-1-84951-784-3</subfield>
+</datafield>
+<datafield tag="040" ind1=" " ind2=" ">
+<subfield code="a">ABD026</subfield>
+<subfield code="b">cze</subfield>
+</datafield>
+<datafield tag="100" ind1="1" ind2=" ">
+<subfield code="a">Perez, Antonio Santiago</subfield>
+</datafield>
+<datafield tag="245" ind1="1" ind2="0">
+<subfield code="a">OpenLayers cookbook :</subfield>
+<subfield code="b">60 recipes to create GIS web applications with the open source JavaScript library /</subfield>
+<subfield code="c">Antonio Santiago Perez.</subfield>
+</datafield>
+<datafield tag="250" ind1=" " ind2=" ">
+<subfield code="a">1. ed.</subfield>
+</datafield>
+<datafield tag="260" ind1=" " ind2=" ">
+<subfield code="a">Birmingham :</subfield>
+<subfield code="b">Packt Publishing,</subfield>
+<subfield code="c">2012</subfield>
+</datafield>
+<datafield tag="300" ind1=" " ind2=" ">
+<subfield code="a">iii, 284 s. :</subfield>
+<subfield code="b">il.</subfield>
+</datafield>
+<datafield tag="500" ind1=" " ind2=" ">
+<subfield code="a">Obsahuje rejstřík</subfield>
+</datafield>
+<datafield tag="655" ind1=" " ind2="7">
+<subfield code="a">příručky</subfield>
+<subfield code="7">fd133209</subfield>
+<subfield code="2">czenas</subfield>
+</datafield>
+<datafield tag="650" ind1="0" ind2="7">
+<subfield code="a">JavaScript</subfield>
+<subfield code="7">ph117651</subfield>
+<subfield code="2">czenas</subfield>
+</datafield>
+<datafield tag="CAT" ind1=" " ind2=" ">
+<subfield code="a">BATELKOVA</subfield>
+<subfield code="b">20</subfield>
+<subfield code="c">20140103</subfield>
+<subfield code="l">CZU01</subfield>
+<subfield code="h">0913</subfield>
+</datafield>
+<datafield tag="CAT" ind1=" " ind2=" ">
+<subfield code="a">BATELKOVA</subfield>
+<subfield code="b">20</subfield>
+<subfield code="c">20140103</subfield>
+<subfield code="l">CZU01</subfield>
+<subfield code="h">0913</subfield>
+</datafield>
+<datafield tag="CAT" ind1=" " ind2=" ">
+<subfield code="a">BATELKOVA</subfield>
+<subfield code="b">20</subfield>
+<subfield code="c">20140103</subfield>
+<subfield code="l">CZU01</subfield>
+<subfield code="h">0913</subfield>
+</datafield>
+<datafield tag="910" ind1=" " ind2=" ">
+<subfield code="a">ABD026</subfield>
+</datafield>
+<datafield tag="900" ind1=" " ind2=" ">
+<subfield code="a">ABA001</subfield>
+<subfield code="b">12</subfield>
+</datafield>
+<datafield tag="SID" ind1=" " ind2=" ">
+<subfield code="a">Z39</subfield>
+<subfield code="b">SKC-Z-SN</subfield>
+</datafield>
+</oai_marc>
+</metadata>
+</record>
+
+<record>
+<record_header>
+<set_entry>000000002</set_entry>
+</record_header>
+<doc_number>000063337</doc_number>
+<metadata>
+<oai_marc>
+
+
+<leader>00000cam-a22-----7a-4500</leader>
+<controlfield tag="001">000063337</controlfield>
+<controlfield tag="003">CZ-PrCZU</controlfield>
+<controlfield tag="005">20140521093323.0</controlfield>
+<controlfield tag="008">030124s1998----xxu||||||||||||||-||eng--</controlfield>
+<datafield tag="020" ind1=" " ind2=" ">
+<subfield code="a">0-201-18462-1</subfield>
+<subfield code="z">978-0-201-18462-4</subfield>
+</datafield>
+<datafield tag="040" ind1=" " ind2=" ">
+<subfield code="a">ABD100</subfield>
+<subfield code="b">cze</subfield>
+<subfield code="d">ABD026</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+<subfield code="a">004</subfield>
+<subfield code="x">Počítačová věda. Výpočetní technika. Informační technologie</subfield>
+<subfield code="2">Konspekt</subfield>
+<subfield code="9">23</subfield>
+</datafield>
+<datafield tag="080" ind1=" " ind2=" ">
+<subfield code="a">004.045</subfield>
+<subfield code="2">MRF</subfield>
+</datafield>
+<datafield tag="080" ind1=" " ind2=" ">
+<subfield code="a">004.43</subfield>
+<subfield code="2">MRF</subfield>
+</datafield>
+<datafield tag="100" ind1="1" ind2=" ">
+<subfield code="a">Alpert, Sherman R.</subfield>
+<subfield code="4">aut</subfield>
+</datafield>
+<datafield tag="245" ind1="1" ind2="4">
+<subfield code="a">The design patterns Smalltalk companion /</subfield>
+<subfield code="c">Sherman R. Alpert, Kyle Brown, Bobby Woolf.</subfield>
+</datafield>
+<datafield tag="260" ind1=" " ind2=" ">
+<subfield code="a">Reading :</subfield>
+<subfield code="b">Addison-Wesley,</subfield>
+<subfield code="c">c1998.</subfield>
+</datafield>
+<datafield tag="300" ind1=" " ind2=" ">
+<subfield code="a">xiii, 444 s. :</subfield>
+<subfield code="b">il.</subfield>
+</datafield>
+<datafield tag="490" ind1="0" ind2=" ">
+<subfield code="a">The software patterns series</subfield>
+</datafield>
+<datafield tag="504" ind1=" " ind2=" ">
+<subfield code="a">Obsahuje bibliografii a rejstřík</subfield>
+</datafield>
+<datafield tag="650" ind1="1" ind2="4">
+<subfield code="a">objektově orientované programování</subfield>
+<subfield code="2">psh</subfield>
+</datafield>
+<datafield tag="650" ind1="1" ind2="4">
+<subfield code="a">programovací jazyky</subfield>
+<subfield code="2">psh</subfield>
+</datafield>
+<datafield tag="655" ind1=" " ind2="7">
+<subfield code="a">monografie</subfield>
+<subfield code="7">fd132842</subfield>
+<subfield code="2">czenas</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+<subfield code="a">Brown, Kyle</subfield>
+<subfield code="4">aut</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+<subfield code="a">Woolf, Bobby</subfield>
+<subfield code="7">xx0038488</subfield>
+<subfield code="4">aut</subfield>
+</datafield>
+<datafield tag="CAT" ind1=" " ind2=" ">
+<subfield code="a">BATELKOVA</subfield>
+<subfield code="b">20</subfield>
+<subfield code="c">20131104</subfield>
+<subfield code="l">CZU01</subfield>
+<subfield code="h">0841</subfield>
+</datafield>
+<datafield tag="CAT" ind1=" " ind2=" ">
+<subfield code="a">KULHAVA</subfield>
+<subfield code="b">20</subfield>
+<subfield code="c">20140521</subfield>
+<subfield code="l">CZU01</subfield>
+<subfield code="h">0933</subfield>
+</datafield>
+<datafield tag="910" ind1=" " ind2=" ">
+<subfield code="a">ABD026</subfield>
+</datafield>
+<datafield tag="900" ind1=" " ind2=" ">
+<subfield code="a">ABD100</subfield>
+<subfield code="b">14</subfield>
+</datafield>
+<datafield tag="998" ind1=" " ind2=" ">
+<subfield code="a">005747487</subfield>
+</datafield>
+<datafield tag="SID" ind1=" " ind2=" ">
+<subfield code="a">Z39</subfield>
+<subfield code="b">SKC-Z-SN</subfield>
+</datafield>
+</oai_marc>
+</metadata>
+</record>
+
+<record>
+<record_header>
+<set_entry>000000003</set_entry>
+</record_header>
+<doc_number>000063285</doc_number>
+<metadata>
+<oai_marc>
+
+
+<leader>00000cam-a22-----7a-4500</leader>
+<controlfield tag="001">000063285</controlfield>
+<controlfield tag="003">CZ-PrCZU</controlfield>
+<controlfield tag="005">20131021142225.0</controlfield>
+<controlfield tag="007">ta</controlfield>
+<controlfield tag="008">111025s2011----gw-a---f------101-0-eng-d</controlfield>
+<datafield tag="020" ind1=" " ind2=" ">
+<subfield code="a">978-3-642-22284-9 (váz.)</subfield>
+</datafield>
+<datafield tag="040" ind1=" " ind2=" ">
+<subfield code="a">UKMGB</subfield>
+<subfield code="b">cze</subfield>
+<subfield code="c">UKMGB</subfield>
+<subfield code="d">ABA001</subfield>
+<subfield code="d">ABD026</subfield>
+</datafield>
+<datafield tag="072" ind1=" " ind2="7">
+<subfield code="a">004</subfield>
+<subfield code="x">Počítačová věda. Výpočetní technika. Informační technologie</subfield>
+<subfield code="2">Konspekt</subfield>
+<subfield code="9">23</subfield>
+</datafield>
+<datafield tag="080" ind1=" " ind2=" ">
+<subfield code="a">[007+004]:502/504</subfield>
+<subfield code="2">MRF</subfield>
+</datafield>
+<datafield tag="080" ind1=" " ind2=" ">
+<subfield code="a">(062.534)</subfield>
+<subfield code="2">MRF</subfield>
+</datafield>
+<datafield tag="111" ind1="2" ind2=" ">
+<subfield code="a">International Symposium on Environmental Software Systems</subfield>
+<subfield code="d">(2011 :</subfield>
+<subfield code="c">Brno, Česko)</subfield>
+<subfield code="7">kn20120326004</subfield>
+</datafield>
+<datafield tag="245" ind1="1" ind2="0">
+<subfield code="a">Environmental Software Systems :</subfield>
+<subfield code="b">frameworks of eEnvironment : 9th IFIP WG 5.11 international symposium, ISESS 2011, Brno, Czech Republic, June 27-29, 2011 : proceedings /</subfield>
+<subfield code="c">Jiří Hřebíček, Gerald Schimak, Ralf Denzer (eds.)</subfield>
+</datafield>
+<datafield tag="260" ind1=" " ind2=" ">
+<subfield code="a">Heidelberg :</subfield>
+<subfield code="b">Springer,</subfield>
+<subfield code="c">c2011</subfield>
+</datafield>
+<datafield tag="300" ind1=" " ind2=" ">
+<subfield code="a">xxiii, 677 s. :</subfield>
+<subfield code="b">il. ;</subfield>
+<subfield code="c">25 cm</subfield>
+</datafield>
+<datafield tag="490" ind1="1" ind2=" ">
+<subfield code="a">IFIP advances in information and communication technology,</subfield>
+<subfield code="x">1868-4238 ;</subfield>
+<subfield code="v">359</subfield>
+</datafield>
+<datafield tag="504" ind1=" " ind2=" ">
+<subfield code="a">Obsahuje bibliografie, bibliografické odkazy a rejstřík</subfield>
+</datafield>
+<datafield tag="650" ind1="0" ind2="7">
+<subfield code="a">environmentální informační systémy</subfield>
+<subfield code="7">ph664421</subfield>
+<subfield code="2">czenas</subfield>
+</datafield>
+<datafield tag="655" ind1=" " ind2="7">
+<subfield code="a">sborníky konferencí</subfield>
+<subfield code="7">fd133333</subfield>
+<subfield code="2">czenas</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+<subfield code="a">Hřebíček, Jiří,</subfield>
+<subfield code="d">1947-</subfield>
+<subfield code="7">jn20000620120</subfield>
+<subfield code="4">edt</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+<subfield code="a">Schimak, Gerald</subfield>
+<subfield code="7">jx20111216038</subfield>
+<subfield code="4">edt</subfield>
+</datafield>
+<datafield tag="700" ind1="1" ind2=" ">
+<subfield code="a">Denzer, Ralf</subfield>
+<subfield code="7">jx20111216016</subfield>
+<subfield code="4">edt</subfield>
+</datafield>
+<datafield tag="710" ind1="2" ind2=" ">
+<subfield code="a">International Federation for Information Processing</subfield>
+<subfield code="7">kn20031215002</subfield>
+</datafield>
+<datafield tag="830" ind1=" " ind2="0">
+<subfield code="a">IFIP advances in information and communication technology</subfield>
+</datafield>
+<datafield tag="CAT" ind1=" " ind2=" ">
+<subfield code="a">BATELKOVA</subfield>
+<subfield code="b">20</subfield>
+<subfield code="c">20131021</subfield>
+<subfield code="l">CZU01</subfield>
+<subfield code="h">1422</subfield>
+</datafield>
+<datafield tag="910" ind1=" " ind2=" ">
+<subfield code="a">ABD026</subfield>
+</datafield>
+<datafield tag="998" ind1=" " ind2=" ">
+<subfield code="a">002238349</subfield>
+</datafield>
+<datafield tag="SID" ind1=" " ind2=" ">
+<subfield code="a">Z39</subfield>
+<subfield code="b">NKC-Z</subfield>
+</datafield>
+</oai_marc>
+</metadata>
+</record>
+  	</present>
+</collection>

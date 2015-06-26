@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Knihovna KII PEF ČZU</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="login-bgc" data-no-turbolink="true">
+    <div class="container col-md-3 centering login-alert">
+     
+    <%= render 'layouts/messages' %>       
+
+    </div>
+
+    <div class="container centering login">
+ 
+    <%= yield %>
+
+    </div> 
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

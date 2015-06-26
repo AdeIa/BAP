@@ -1,0 +1,146 @@
+<h1>Aktuální výpůjčky čtenáře <%=User.get_name(@user_id) %> <%= User.get_surname(@user_id) %></h1>
+<div class="vspace5"></div>
+
+<% if @loans.count > 0 %>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= sortable "actual_name", "Titul" %></th>
+      <th><%= sortable "actual_author_name", "Autor" %></th>
+      <th><%= sortable "actual_from", "Od" %></th>
+      <th><%= sortable "actual_to", "Do" %></th>
+      <th>Předat výpůjčku dalšímu čtenáři</th>
+      <th>Prodloužit</th>
+      <th>Potvrdit vrácení</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @loans.each do |loan| %>
+      <tr>
+        <td>
+          <%= link_to books_detail_path(:id => loan.book_id) do %>
+                <%= Book.get_name(loan.book_id) %> 
+          <% end %>
+        </td>
+        <td>
+          <%= link_to books_search_path(:category => "Autor", :search => Book.get_author(loan.book_id)) do %>
+                <%= Book.get_author(loan.book_id) %> 
+          <% end %>
+        </td>
+        <td><%= loan.from %></td>
+        <td><%= loan.to %></td>
+        <td>
+          <%= link_to new_loan_path(:id => loan.book_id, :prev_loan => loan.id, :user_id => @user_id),  :class => "btn btn-warning navbar-btn btn-sm", :role => "button", :id => "loan_#{loan.book_id}"  do %>
+            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+          <% end %>
+        </td>
+         <td>
+          <%= link_to loans_prolong_path(:id => loan.id), :class => "btn btn-warning navbar-btn btn-sm", :role => "button", :id => "prolong_#{loan.book_id}"  do %>
+             <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to loans_return_book_path(:id => loan.id), :class => "btn btn-success navbar-btn btn-sm", :role => "button", :id => "delete_#{loan.book_id}"  do %>
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% else %>
+<p class="color-warning"><strong>Čtenář nemá momentálně žádné výpůjčky.</strong></p>
+<% end %>
+<br>
+<div class="vspace6"></div>
+
+<h1>Historie výpůjček čtenáře <%= @user_name %> <%= @user_surname %></h1>
+<div class="vspace5"></div>
+
+<% if @history_loans.count > 0 %>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= sortable "history_name", "Titul" %></th>
+      <th><%= sortable "history_author_name", "Autor" %></th>
+      <th><%= sortable "history_from", "Datum vypůjčení" %></th>
+      <th><%= sortable "history_returned", "Datum vrácení" %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @history_loans.each do |loan| %>
+      <tr>
+        <td>
+          <%= link_to books_detail_path(:id => loan.book_id) do %>
+                <%= Book.get_name(loan.book_id) %> 
+          <% end %>
+        </td>
+        <td>
+        <%= link_to books_search_path(:category => "Autor", :search => Book.get_author(loan.book_id)) do %>
+                <%= Book.get_author(loan.book_id) %> 
+          <% end %>
+        </td>
+        <td><%= loan.from %></td>
+        <td><%= loan.returned%></td>       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% else %> 
+<p class="color-warning"><strong>Historie neobsahuje žádné výpůjčky.</strong></p>
+<% end %>
+
+<div class="vspace6"></div>
+
+
+<h1>Rezervace čtenáře <%= @user_name %> <%= @user_surname %></h1>
+<div class="vspace5"></div>
+
+<% if @reservations.empty? %>
+
+<p class="color-warning"><strong>Čtenář nemá aktuálně žádné rezervace.</strong></p>
+<% else %>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= sortable "reservation_name", "Titul" %></th>
+      <th><%= sortable "reservation_author_name", "Autor" %></th>
+      <th><%= sortable "reservation_created_at", "Datum rezervace" %></th>
+      <th>Vypůjčit</th>
+      <th>Zrušit</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td>
+
+         <%= link_to books_detail_path(:id => reservation.book_id) do %>
+             <%= Book.get_name(reservation.book_id) %> 
+          <% end %>
+        </td>
+        <td>
+            <%= link_to books_search_path(:category => "Autor", :search =>  Book.get_author(reservation.book_id)) do %>
+                <%=  Book.get_author(reservation.book_id) %> 
+          <% end %>
+        </td>
+        <td><%= reservation.created_at.to_date %></td>
+         <td>
+          <%= link_to loans_path(loan: {:book_id => reservation.book_id, :user_id => reservation.user_id, :from => Date.today, :to => (Date.today + @loan_length)}),  :method => :post, data: { confirm: 'Jste si jistí?' }, :class => "btn btn-success navbar-btn btn-sm", :role => "button" do %>
+                 <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+           <% end %>
+        </td>
+        <td><%= link_to reservation, method: :delete, data: { confirm: 'Jste si jistí?' }, :class => "btn btn-danger navbar-btn btn-sm", :role => "button" do %>
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

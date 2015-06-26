@@ -1,0 +1,150 @@
+<h1 class="detail-title"><%= @record.name %></h1>
+<div class="vspace3"></div>  
+
+<h2 class="detail-author"><%= @record.author_name %></h2>
+<div class="vspace6"></div>  
+
+<div class="row">
+  <div class="row col-md-8 pull-left">
+
+
+  <table class="table table-borderless table-hover margin-left-1">
+    <tbody>
+    <tr>
+        <td><strong>Dostupnost</strong></td>
+        <td>
+          <% if @count_of_loans >= @record.quantity %>
+            <span class="color-danger">
+               <strong>Vypůjčená</strong></span>
+                  <% if admin_signed_in? %>
+                    <br>čtenářem 
+                    <% @user_ids.each do |user_id| %>
+                      <%= link_to loans_user_all_path(id: user_id) do %> <%= User.get_surname(user_id) %> <%= User.get_name(user_id) %><br><% end %>
+                    <% end %>
+                    <% if !@reservation_user_ids.empty? %>
+                      <span class="color-warning">Rezervováno:</span>
+                          <br><% @reservation_user_ids.each do |user_id| %>
+                            <%= link_to loans_user_all_path(id: user_id) do %> <%= User.get_surname(user_id) %> <%= User.get_name(user_id) %><br><% end %>
+                          <% end %>
+                        <% end %>
+                    <% end %>               
+            <% elsif @book_is_reserved %>
+            <span class="color-warning"><strong>Kniha je rezervovaná</strong></span>
+              <% if admin_signed_in? %>
+                    <br>čtenářem 
+                    <% @reservation_user_ids.each do |user_id| %>
+                      <%= link_to loans_user_all_path(id: user_id) do %> <%= User.get_surname(user_id) %> <%= User.get_name(user_id) %><br><% end %>
+                    <% end %>
+                  <% end %>
+                
+          <% else %>
+            <span class="color-success"><strong>K vypůjčení</strong></span><br>
+            <% if admin_signed_in? %>
+              <% if !@user_ids.empty? %>
+                <span class="color-danger">Vypůjčeno:</span>
+                    <br><% @user_ids.each do |user_id| %>
+                      <%= link_to loans_user_all_path(id: user_id) do %> <%= User.get_surname(user_id) %> <%= User.get_name(user_id) %><br><% end %>
+                    <% end %>
+                  <% end %>
+              <% end %>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Počet jednotek</strong></td>
+        <td><%= @record.quantity - @count_of_loans %>/<%= @record.quantity %></td>
+      </tr>
+      <tr>
+        <td><strong>Evidenční číslo</strong></td>
+        <td><%= @record.kii_number %></td>
+        <% if admin_signed_in? %>
+        <td>
+          <%= form_tag(books_add_registration_number_path(:id => @record.czu_number), :method => "get", class: "") do %> 
+            <div class="input-group">
+                <%= text_field_tag :number, params[:number], class: "form-control registration-number", size: 40, placeholder: "Zadejte ev.číslo" %>
+                  <span class="input-group-btn">
+              <button type="submit" class="btn btn-success registration-number">Editovat</button>
+                  </span>
+            </div><!-- /input-group -->
+            <% end %>
+        </td>
+        <% end %>
+      </tr>
+      <tr>
+        <td><strong>Číslo záznamu</strong></td>
+        <td><%= @record.czu_number %></td>
+      </tr>
+      <% if !@record.isbn.nil? %>
+      <tr>
+        <td><strong>ISBN</strong></td>
+        <td><%= @record.isbn %></td>
+      </tr>
+      <% end %>
+      <% if !@record.edition.nil? %>
+       <tr>
+        <td><strong>Vydání</strong></td>
+        <td><%= @record.edition %></td>
+      </tr>
+      <% end %>
+      <% if !@record.publishing.nil? %>
+       <tr>
+        <td><strong>Nakladatelské údaje</strong></td>
+        <td><%= @record.publishing %></td>
+      </tr>
+      <% end %>
+      <% if !@record.form.nil? %>
+       <tr>
+        <td><strong>Žánr/Forma</strong></td>
+        <td><%= @record.form %></td>
+      </tr>
+      <% end %>
+      <% if !@record.description.nil? %>
+       <tr>
+        <td><strong>Popis</strong></td>
+        <td><%= @record.description %></td>
+      </tr>
+      <% end %>
+      <% if !@record.language.nil? %>
+        <tr>
+        <td><strong>Jazyk</strong></td>
+        <td><%= @record.language %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+    </div>
+
+
+</div>
+
+
+<div class="vspace3"></div>  
+
+<div class="row margin-left-0-5">
+
+<%if admin_signed_in? %>
+
+  <%= link_to new_reservation_path(:id => @record.czu_number),  :class => "btn btn-warning navbar-btn pull-left",  :role => "button" do %>
+      Rezervovat
+  <% end %>
+  <% if @count_of_loans < @record.quantity %>
+    <%= link_to new_loan_path(:id => @record.czu_number),  :class => "btn btn-warning navbar-btn pull-left margin-left-2",  :role => "button"  do %>
+        Vypůjčit
+    <% end %>
+  <% end %>
+
+<% end %>
+
+<%if user_signed_in? && !@book_is_reserved_by_current_user %>
+ <% if current_user.id != @user_id %>
+    <%= link_to reservations_path(reservation: {:book_id => @record.czu_number, :user_id => current_user.id}),  :method => :post, :class => "btn btn-warning navbar-btn pull-left",  :role => "button" do %>
+        Rezervovat
+    <% end %>   
+  <% end %>
+<% end %>
+
+</div>
+
+
+
+

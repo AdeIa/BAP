@@ -1,0 +1,57 @@
+
+<h1>Nastavení aplikace</h1>
+<div class="row margin-left-1">
+<div class="vspace4"></div>
+<div class="row col-md-6" id="container">
+<%= form_tag(update_multiple_settings_path, :method => :put) do %>
+    <table class="table table-hover">
+		<tbody>
+			<% for setting in @settings %>
+				<%= fields_for "settings[]", setting do |f| %>
+					<tr>
+						<td>
+							<strong>
+								<%= setting.name %>
+							</strong>
+						</td>
+						<td>
+						   <%= f.text_field :value %>
+						</td>
+					</tr>
+				<% end %>
+			<% end %>
+
+			<tr>
+				<td>
+					<strong>
+						Zasílat automatické emaily knihovníkovi
+					</strong>
+				</td>
+				<td>
+				   <%= check_box_tag 'reminder', 1 ,current_admin.reminder  %>  
+				</td>
+			</tr>
+  	</tbody>
+  </table>
+  <%= hidden_field_tag "admin_id", current_admin.id %>
+
+  <p><%= submit_tag "Nastavit", class:"pull-left btn btn-md btn-success down-space"   %></p>
+<% end %>
+</div>
+</div>
+
+<hr style="border-color: #818181">
+
+<div class="row margin-left-1">
+
+<p><strong>Aktualizace knihovního fondu</strong></p>
+ <%= link_to books_download_path, :class => "btn btn-warning navbar-btn btn-md", :role => "button", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Aktualizace bude trvat pár minut..."}  do %>
+                Stáhnout a aktualizovat knihovní fond
+              <% end %>
+
+
+ <%= link_to books_save_into_database_path, :class => "btn btn-warning navbar-btn btn-md margin-left-1", :role => "button", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Počkejte prosím..."}  do %>
+                Uložit fond do databáze
+              <% end %>
+</div>
+

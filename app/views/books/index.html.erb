@@ -1,0 +1,99 @@
+<script type="text/javascript">
+      function selectAll(){
+        $("input:checkbox").each(function(){
+          $(this).attr('checked', true);
+        });
+
+        return false;
+      }
+</script>
+
+<h1>Databáze knih</h1>
+
+<div class="vspace5"></div>
+
+<%= paginate @records %>
+
+<div class="row pull-right", style="margin-top:1.5em">
+  <%= form_tag(books_path, :method => :get) do %>
+  <div class="input-group", style="width:5em">
+    <%= text_field_tag :page_value , @count_of_items, class:"form-control", style:"width:5em"%>
+    <span class="input-group-btn">
+       <%= submit_tag "Počet titulů na stránku", class:"btn btn-md btn-success" %>
+    </span>
+    </div>
+<% end %>
+
+</div>
+
+
+<div class="row pull-left">
+<%= form_for :book, :url => edit_multiple_books_path, :html => { :method => :post } do %>
+<div class="checkboxes-container">
+<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+
+    <thead>
+      <tr>
+        <% if admin_signed_in?  %>
+          <th><a href="#" onclick="selectAll()">Označit vše</a></th>
+        <% end %>  
+        <th><%= sortable "kii_number", "Evidenční číslo", @count_of_items %></th>      
+        <th><%= sortable "czu_number", "Číslo zázn.", @count_of_items %></th>        
+        <th><%= sortable "author_name", "Autor", @count_of_items %></th>        
+        <th><%= sortable "name", "Titul", @count_of_items %></th>        
+        <th><%= sortable "isbn", "ISBN", @count_of_items %></th>        
+        <th><%= sortable "edition", "Vydání", @count_of_items %></th>        
+        <th><%= sortable "form", "Žánr", @count_of_items %></th>   
+        <% if admin_signed_in?  %>
+
+        <th>Smazat</th>         
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+    
+    <% @records.each do |record| %>
+      <tr> 
+      <% if admin_signed_in?  %>
+        <td><%= check_box_tag "book_ids[]", record.czu_number %></td>
+      <% end %>
+  
+        <td><%= record.kii_number %></td> 
+        <td><%= record.czu_number %></td>
+        <td>
+            <%= link_to books_search_path(:category => "Autor", :search => record.author_name) do %>
+                <%= record.author_name %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to books_detail_path(:id => record.czu_number) do %>
+            <%= record.name %>
+          <% end %>
+        </td>
+        <td><%= record.isbn %></td>
+        <td><%= record.edition %></td>
+        <td><%= record.form %></td>
+        <% if admin_signed_in?  %>
+
+        <td><%= link_to books_destroy_path(id: record.czu_number), :method => :delete, data: { confirm: "Jste si jisti?" }, :class => "btn btn-danger navbar-btn btn-sm", :role => "button" do %>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                <% end %>
+        </td>
+        <% end %>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+</div>
+<%= paginate @records %>
+<div class="vspace3"></div>
+<% if admin_signed_in?  %>
+  <%= submit_tag "Přidat evidenční čísla", class:"pull-left btn btn-md btn-success down-space"%>
+<% end %>
+<% end %>
+
+
+
+</div>

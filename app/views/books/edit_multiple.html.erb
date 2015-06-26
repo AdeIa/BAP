@@ -1,0 +1,26 @@
+<h1> Přidání evidenčního čísla</h1>  
+<div class="vspace4"></div>
+<div class="row col-md-8">
+<%= form_tag(update_multiple_books_path, method: :put) do  %>
+    <table class="table table-hover">
+    <tbody>
+  		<% @records.each do |record| %>  
+    	<tr>
+	        <td class="col-md-9">
+	        	<strong>
+					<%= record.name %>
+	        	</strong>
+	        </td>
+	        <td>
+			   <%= text_field_tag "books[#{record.czu_number}]", (params[:number] or record.kii_number), :placeholder => "#{record.kii_number}" %>
+	        </td>
+     	</tr> 
+
+ 	 	<% end %>
+
+   </tbody>
+  </table>
+  <p><%= submit_tag "Odeslat", class:"pull-left btn btn-md btn-success down-space"  %></p>  
+
+<% end %>  
+</div>

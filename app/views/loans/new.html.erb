@@ -1,0 +1,55 @@
+<div class="row">
+<div class="row col-md-8">
+
+<% if !@prev_loan.nil? %>
+  <h1 class="margin-left-1">Vypůjčit knihu jinému čtenáři</h1>
+<% else %>
+  <h1 class="margin-left-1">Nová výpůjčka</h1>
+<% end %>
+<div class="vspace4"></div>
+<% if @reservation_count > 0 %>
+  <div class="row">
+    <div class="alert alert-warning margin-left-3 col-md-4" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Tato kniha je rezervována.</strong></div>
+  </div>
+  <div class="vspace1"></div>
+<% end %>
+<%= render 'form' %>
+<div class="row margin-left-1">
+<% if @all_reservations.count > 0 %>
+
+    <h3>Přehled rezervací na tuto knihu</h3>
+
+    <div class="vspace4"></div>
+
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Čtenář</th>
+          <th>Datum rezervace</th>
+          <th>Vypůjčit</th>
+          <th>Zamítnout</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @all_reservations.each do |reservation| %>
+          <tr>
+            <td><%= User.get_surname( reservation.user_id) %> <%=User.get_name( reservation.user_id) %></td>
+            <td><%= reservation.created_at.to_date %></td>
+            <td>
+				<%= link_to loans_path(loan: {:book_id => reservation.book_id, :user_id => reservation.user_id, :from => Date.today, :to => (Date.today + @loan_length)}),  :method => :post, data: { confirm: 'Jste si jistí?' }, :class => "btn btn-success navbar-btn btn-sm", :role => "button" do %>
+                 <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+			    <% end %>
+			</td>
+            <td>
+                <%= link_to reservation, method: :delete, data: { confirm: 'Jste si jistí?' }, :class => "btn btn-danger navbar-btn btn-sm", :role => "button" do  %>
+                 <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+</table>
+
+  <% end %>
+</div>

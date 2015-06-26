@@ -1,0 +1,25 @@
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <%= render 'users/shared/logo' %> 
+  <h3>Změna hesla</h3>
+
+  <div class="form-group has-feedback">
+    <%= f.label :password, class:"control-label" %><br />
+    <%= f.password_field :password, autofocus: true, autocomplete: "off", class:"form-control", placeholder:"Nové heslo" %>
+    <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+
+  </div>
+
+  <div class="form-group has-feedback">
+    <%= f.label :password_confirmation, class:"control-label" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Potvrzení nového hesla" %>
+    <i class="glyphicon glyphicon-repeat form-control-feedback"></i>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Změnit heslo", class:"pull-right btn btn-md btn-danger"  %>
+  </div>
+<% end %>
+

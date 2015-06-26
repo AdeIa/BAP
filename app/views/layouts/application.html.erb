@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Knihovna KII PEF ČZU</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+  
+</head>
+<body>
+
+    <%= render 'layouts/navbar' %> 
+
+    <% if user_signed_in? %>
+        <%= render 'layouts/userNavbar' %>   
+    <% elsif admin_signed_in? %>
+        <%= render 'layouts/adminNavbar' %>       
+    <% else %>                         
+        <%= render 'layouts/signin' %>       
+    <% end %>
+   
+  
+  <div class="main container">
+  <div class="container col-md-4 centering">
+    <%= render 'layouts/messages' %>       
+  </div>
+  <%= render_breadcrumbs :separator => ' / ' %>
+    <%= yield %>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+    <p class="centering footer-text">Copyright &copy; 2015 Knihovna Katedry informačního inženýrství Provozně ekonomické fakulty České zemědělské univerzity v Praze | All rights reserved </p>
+    </div>
+  </footer>
+
+</body>
+</html>

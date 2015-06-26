@@ -1,0 +1,62 @@
+<%= form_for(@reservation, :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
+  <% if @reservation.errors.any? %>
+    <div class="alert alert-danger col-md-6 margin-left-2">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <ul>
+         <% @reservation.errors.full_messages.each do |msg| %>
+         <li><%= msg.gsub("User", "Čtenář").gsub("vyplněno", "vyplněn") %></li>
+         <% end %>
+      </ul>
+   </div>
+  <% end %>
+
+  <div class="form-group">
+  <div class="row">
+    <div class="col-sm-6 pull-left margin-left-3">  
+    <%= f.collection_select :user_id, @users, :id, :name_with_surname, {prompt: 'Vyberte čtenáře'}, {class: "form-control selectpicker "} %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit "Rezervovat", class:"pull-left btn btn-md btn-success margin-left-2"  %>
+  </div>
+
+  </div>
+
+  <div class="vspace4"></div>
+
+
+  <table class="table table-borderless margin-left-3">
+    <tbody>
+      <tr>
+        <td><strong>Titul</strong></td>
+        <td><%= @book.name %></td>
+      </tr>
+      <tr>
+        <td><strong>Autor</strong></td>
+        <td><%= @book.author_name %></td>
+      </tr>
+      <tr>
+        <td><strong>ISBN</strong></td>
+        <td><%= @book.isbn %></td>
+      </tr>
+       <tr>
+        <td><strong>Vydání</strong></td>
+        <td><%= @book.edition %></td>
+      </tr>
+       <tr>
+        <td><strong>Žánr</strong></td>
+        <td><%= @book.form %></td>
+      </tr>
+      <tr>
+        <td><strong>Jazyk</strong></td>
+        <td><%= @book.language %></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <%= f.hidden_field :book_id, :value =>@book_id %>
+
+<% end %>
+</div>
+</div>

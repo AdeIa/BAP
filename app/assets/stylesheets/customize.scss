@@ -1,0 +1,369 @@
+.header-top, body, h1,h2,h3,h4,h5,h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.main{
+  padding-bottom: 5em;
+}
+
+.centering {
+  float:none;
+  margin:0 auto;
+}
+
+.danger {
+  background-color: #d43f3a;
+}
+
+/* Custom css for devise login */
+.login-alert{
+  margin-top: 5em;
+}
+.login {
+	background-color: white;
+	padding-bottom: 2em;
+	border: 1px solid #818181;
+	border-radius: 4px;
+  max-width: 35em;
+}
+
+.login-link{
+  color: black;
+  text-decoration: none;
+}
+
+a.login-link:hover{
+  text-decoration: none;
+}
+
+.login-bgc{
+	background-color: #ccc;
+}
+
+.login-bigger-title{
+  font-size:0.56em;
+  font-weight: bolder;
+}
+
+.login-smaller-title{
+  font-size: 0.57em;
+  font-weight: bolder;
+}
+
+.form-signin-heading{
+  line-height: 20px;
+  padding-top: 0.25em;
+}
+
+.title-danger{
+  color:#D9534F;
+}
+
+.vspace  { margin-top: 2px; }
+.vspace1 { margin-top: 5px; }
+.vspace2 { margin-top: 10px; }
+.vspace3 { margin-top: 15px; }
+.vspace4 { margin-top: 30px; }
+.vspace5 { margin-top: 40px; }
+.vspace6 { margin-top: 60px; }
+.vspace7 { margin-top: 80px; }
+.vspace8 { margin-top: 100px; }
+.vspace9 { margin-top: 150px; }
+.down-space { margin-bottom: 2em; }
+/* End devise login */
+
+/* Detail of book */
+.detail-title{
+  font-size: 1.5em;
+}
+
+.detail-author{
+  font-size: 1.3em;
+}
+/* END detail of book */
+
+/* Sticky footer styles from http://getbootstrap.com/examples/sticky-footer/ */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3em;
+  background-color: #5cb85c;
+}
+
+.footer-text{
+  margin-top: 1%;
+  color: white;
+}
+
+/* End Sticky footer styles  */
+
+/* HEADER TOP */
+.navbar-brand.header{
+  padding: 10px !important;
+  line-height: 19px !important;
+}
+.header-top{
+  min-height: 7em;
+  padding: 1em;
+}
+
+.nav-custom{
+  background-color: #5cb85c !important;
+}
+
+.nav-href{
+  color: white !important;
+  font-size: 1.15em;
+}
+
+.home{
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+}
+
+a:hover {
+  color: black;
+}
+
+.navbar-nav > li > a:hover {
+  background-color: #50AF50;
+  color: rgb(238, 238, 238);
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+   background-color: #50AF50;
+  color: rgb(238, 238, 238);
+}
+.header-font-size{
+   color:black;
+}
+.header-top-span{
+  display: inline-block;
+  font-size: 1.45em;
+  font-weight: bolder;
+  margin-top: 0.2em;
+  margin-bottom: 0.6em;
+}
+
+.header-bottom-span{
+  font-size: 1.0em;
+}
+
+.search{
+  height: 3.5em;
+  border: 1px solid #ccc;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle{
+  background-color: white;
+  border-color: #B3B3B3;
+}
+.navbar-default .navbar-toggle .icon-bar{
+  background-color: #B3B3B3;
+}
+
+.navbar-brand.account{
+  font-size: 14px;
+  margin-top: -15px;
+  line-height: 2em;
+}
+
+.signing > li{
+  display: inline-block;
+}
+
+.search-form{
+  float: right;
+}
+
+.custom-navbar-header{
+  height: 1.5em;
+}
+
+
+/* END HEADER TOP */
+
+.registration-number{
+  height:2em;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+
+.margin-left-0-5{
+  margin-left: 0.5em;
+}
+.margin-left-1{
+  margin-left: 1em;
+}
+.margin-left-2{
+  margin-left: 2em;
+}
+.margin-left-3{
+  margin-left: 3em;
+}
+
+.margin-left-4{
+  margin-left: 4em;
+}
+
+.table-borderless td,
+.table-borderless th {
+    border: none !important;
+}
+
+.dark-grey{
+  color: #5F5858;
+}
+
+th .current {
+  padding-right: 2.5em;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+th .asc { 
+  background-image: url(/images/bullet_arrow_up.png); 
+}
+
+th .desc { 
+  background-image: url(/images/bullet_arrow_down.png); 
+}
+
+h1{
+  font-size: 2em;
+}
+
+a{
+  color: #333;
+}
+
+ a:focus{
+  color: #2C2C2C;
+ }
+
+.form-control:focus{
+  border-color: #B3B3B3;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px #B3B3B3;;
+}
+
+.nav > li > a:hover, .nav > li > a:focus, .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+  background-color: #50AF50;
+}
+.active{
+  background-color: #47A747;
+}
+
+.color-danger{
+  color: #D43F3A;
+}
+
+.color-success{
+  color: #47A747;
+}
+
+.color-warning{
+  color: #EEA236;
+}
+
+/* PAGINATION */
+.pagination > .active > a, {
+  background-color: #50AF50;
+  border-color: #47A747;
+}
+
+.pagination > .active > a:hover,.pagination > .active > a:focus{
+  background-color: #47A747;
+  border-color: #47A747;
+}
+.pagination > li > a, .pagination > li > a:hover, .pagination > li > a:focus{
+  color: #5F5858;
+}
+/* END PAGINATION */
+
+@media only screen and (max-width: 1400px) {
+  #search{
+    width: 20em;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+  #search{
+    width: 17em;
+  }
+
+}
+
+@media only screen and (max-width: 1150px) {
+  .search-form{
+    float:left;
+  }
+
+  #search{
+    width: 37em;
+  }
+
+}
+
+@media only screen and (max-width: 780px) {
+  #search{
+    width: 100%;
+  }
+ .navbar-header.logo{
+    width: 50em;
+  }
+}
+
+
+@media only screen and (max-width: 1050px) {
+  .navbar-collapse{
+  box-shadow: 0px 1px 0px white inset;
+  padding-top: 0.5em;
+}
+.navbar-brand.account{
+  line-height: 1.85em;
+}
+.navbar-nav.menu{
+  width: 12em;
+}
+.header-top{
+  min-height: 12em;
+}
+#admin-navbar-collapse, #signin-navbar-collapse, #user-navbar-collapse{
+  margin-top: 3.5em;
+}
+.navbar-collapse.collapse, .navbar-toggle {
+    display: none !important;
+}
+
+.navbar-collapse, .navbar-toggle {
+    overflow-x: visible !important;
+}
+
+.navbar-collapse.in, .navbar-toggle {
+  overflow-y: none !important;
+}
+
+.collapse.in , .navbar-toggle{
+  display: block !important;
+}
+}
+
+
+@media only screen and (max-width:767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: white;
+  }
+  .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-color: #50AF50;
+    color: white;
+  }
+}

@@ -1,0 +1,45 @@
+<h1>Přehled výpůjček</h1>
+<div class="vspace5"></div>
+<% if @loans.empty? %>
+<p class="color-warning"><strong>Aktuálně nemáte vypůjčenou žádnou knihu.</strong></p>
+<% else %>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= sortable "name", "Titul" %></th>
+      <th><%= sortable "author_name", "Autor" %></th>
+      <th><%= sortable "from", "Od" %></th>
+      <th><%= sortable "to", "Do" %></th>
+      <th>Prodloužit</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @loans.each do |loan| %>
+      <tr>
+        <td>
+          <%= link_to books_detail_path(:id => loan.book_id) do %>
+                <%= Book.get_name(loan.book_id) %> 
+          <% end %>
+        </td>
+        <td>
+          <%= link_to books_search_path(:category => "Autor", :search => Book.get_author(loan.book_id)) do %>
+                <%= Book.get_author(loan.book_id) %> 
+          <% end %>
+        </td>
+        <td><%= loan.from %></td>
+         <% if loan.to < Date.today %>
+        <td class="color-danger">
+        <strong><%= loan.to %></strong></td>
+        <% else %>
+        <td><%= loan.to %></td>
+        <% end %>
+        <td><%= link_to loans_prolong_path(:id => loan.id), :class => "btn btn-warning navbar-btn", :role => "button" do %>
+             <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

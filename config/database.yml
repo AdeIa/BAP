@@ -1,0 +1,26 @@
+default: &default
+  adapter: mysql2  
+  encoding: utf8
+  database: library_development
+  pool: 5
+  username: 
+  password: 
+  host: localhost
+
+development:
+  <<: *default
+
+test: &test
+  adapter: mysql2  
+  encoding: utf8
+  database: library_test
+  pool: 5
+  username: 
+  password: 
+  host: localhost
+
+cucumber:
+  <<: *test
+  
+production:
+  <<: *default

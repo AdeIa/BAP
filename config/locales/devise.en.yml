@@ -1,0 +1,67 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+en:
+  devise:
+    confirmations:
+      confirmed: "Vaše emailová adresa byla úspěšně potvrzena."
+      send_instructions: "Za pár minut obdržíte email s instrukcemi, jak potvrdit Vaši emailovou adresu."
+      send_paranoid_instructions: "Existuje-li Vaše emailová adresa v naší databázi, obdržíte za pár minut email s instrukcemi, jak potvrdit Vaši emailovou adresu."
+    failure:
+      already_authenticated: "Jste již přihlášen(a)."
+      inactive: "Váš účet zatím nebyl aktivován."
+      invalid: "Neplatný %{authentication_keys} nebo heslo."
+      locked: "Váš účet je uzamčen."
+      last_attempt: "Zbývá jeden pokus, než bude Váš účet uzamčen."
+      not_found_in_database: "Neplatný %{authentication_keys} nebo heslo."
+      timeout: "Vaše přihlášení vypršelo. Pro pokračování se prosím přihlašte."
+      unauthenticated: "Před pokračováním se musíte zaregistrovat nebo přihlásit."
+      unconfirmed: "Před pokračováním musíte potvrdit Váš email."
+      not_approved: 'Váš účet zatím nebyl schválen knihovníkem.'
+    mailer:
+      confirmation_instructions:
+        subject: "Pokyny pro potvrzeni"
+      reset_password_instructions:
+        subject: "Pokyny pro obnoveni hesla"
+      unlock_instructions:
+        subject: "Pokyny pro odemknuti"
+    omniauth_callbacks:
+      failure: "Nemůžete být ověřeni z %{kind}, protože %{reason}."
+      success: "Úspěšně ověřen z %{kind} účtu."
+    passwords:
+      no_token: "Tuto stránku nelze navštívit bez odkazu z emailu pro resetování hesla. Pokud jste šli přes email pro resetování hesla, zkontrolujte, zda jste použili celou url adresu."
+      send_instructions: "Během několika minut obdržíte email s instrukcemi pro reset Vašeho hesla."
+      send_paranoid_instructions: "Pokud Váš email existuje v naší databázi, obdržíte emailem během několika minut odkaz pro obnovu hesla."
+      updated: "Vaše heslo bylo úspěšně změněno. Nyní jste přihlášeni."
+      updated_not_active: "Vaše heslo bylo úspěšně změněno."
+    registrations:
+      destroyed: "Váš účet byl úspěšně zrušen."
+      signed_up: "Vítejte! Vaše registrace proběhla v pořádku."
+      signed_up_but_inactive: "Vaše registrace proběhla v pořádku. Nicméně jsme Vás nemohli přihlásit, protože Váš účet zatím nebyl aktivován."
+      signed_up_but_locked: "Vaše registrace proběhla v pořádku. Nicméně jsme Vás nemohli přihlásit, protože Váš účet je uzamčen."
+      signed_up_but_unconfirmed: "Zpráva s odkazem pro potvrzení účtu byla odeslána na Váš email. Prosím navštivte odkaz pro aktivaci Vašeho účtu."
+      update_needs_confirmation: "Editace Vašeho účtu proběhla úspěšně, ale musíme ověřit Vaši novou emailovou adresu. Prosím zkontrolujte svůj email a navštivte odkaz pro potvrzení nové emaiové adresy."
+      updated: "Váš účet byl úspěšně editován."
+      user:
+        signed_up_but_not_approved: 'Vaše registrace byla úspěšná, Váš účet ale zatím nebyl schválen knihovníkem.'
+      failure:
+        not_approved: 'Váš účet zatím nebyl schválen knihovníkem.'
+    sessions:
+      signed_in: "Přihlášení proběhlo úspěšně."
+      signed_out: "Odhlášení proběhlo úspěšně."
+      already_signed_out: "Odhlášení proběhlo úspěšně."
+    unlocks:
+      send_instructions: "Během několika minut obdržíte email s pokyny pro odemčení Vašeho účtu."
+      send_paranoid_instructions: "Pokud Váš účet existuje, během několika minut obdržíte email s pokyny pro odemčení Vašeho účtu."
+      unlocked: "Váš účet byl úspěšně odemčen. Pro pokračování se prosím přihlašte."
+  errors:
+    messages:
+      already_confirmed: "byl úspěšně potvrzen, prosím, zkuste se přihlásit"
+      blank: "musí být vyplněno."
+      invalid: "není validní."
+      too_short: "je příliš krátké(musí obsahovat alespoň 8 znaků)"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      expired: "vypršela, prosím, požádejte o nové"
+      not_found: "nebyl nalezen"
+      not_locked: "nebyl uzamčen"
+      not_saved:
+        one: "1 chyba brání tomuto %{resource} před uložením:"
+        other: "%{count} chyb brání tomuto %{resource} před uložením:"
