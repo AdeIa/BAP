@@ -130,7 +130,7 @@ class Book < ActiveRecord::Base
 
     for i in 1..count
       file = File.open("./data/fond#{i}.xml","w")
-       response = http.request(Net::HTTP::Get.new("odstraneno_z_du"))
+       response = http.request(Net::HTTP::Get.new("odstraneno"))
        File.open(file.path,'w') do |f|
          f.write response.body.force_encoding('UTF-8')
        end
